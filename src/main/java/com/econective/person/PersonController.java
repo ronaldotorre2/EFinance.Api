@@ -14,6 +14,11 @@ public class PersonController {
 	@Autowired
 	PersonRepository personRepository;
 	
+	@GetMapping("/")
+	public String GetAll() {
+		return "Hello";
+	}
+	
 	@GetMapping("/people")
 	public List<PersonEntity> GetPeople() {
 		return personRepository.findAll();
