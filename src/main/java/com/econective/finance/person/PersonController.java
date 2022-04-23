@@ -1,4 +1,4 @@
-package com.econective.person;
+package com.econective.finance.person;
 
 import java.util.List;
 

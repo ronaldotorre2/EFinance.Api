@@ -1,4 +1,4 @@
-package com.econective.person;
+package com.econective.finance.person;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

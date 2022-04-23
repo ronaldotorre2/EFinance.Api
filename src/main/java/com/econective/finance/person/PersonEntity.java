@@ -1,4 +1,4 @@
-package com.econective.person;
+package com.econective.finance.person;
 
 import java.io.Serializable;
 import javax.persistence.Column;

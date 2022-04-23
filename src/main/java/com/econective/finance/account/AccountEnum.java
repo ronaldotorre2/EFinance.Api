@@ -1,4 +1,4 @@
-package com.econective.account;
+package com.econective.finance.account;
 
 public class AccountEnum {
 	
