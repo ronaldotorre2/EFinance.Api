@@ -1,7 +1,7 @@
-package com.econective.finance.account;
+package br.com.econective.Finance.Account;
 
 public class AccountEnum {
-	
+
 	public enum Type {
 		Current,  		//Conta corrente
 		Savings,  		//Poupança 

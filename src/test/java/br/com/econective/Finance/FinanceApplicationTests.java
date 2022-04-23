@@ -1,4 +1,4 @@
-package com.econective.finance;
+package br.com.econective.Finance;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

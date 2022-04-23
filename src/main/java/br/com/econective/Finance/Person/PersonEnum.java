@@ -1,4 +1,4 @@
-package com.econective.finance.person;
+package br.com.econective.Finance.Person;
 
 public class PersonEnum {
 	
