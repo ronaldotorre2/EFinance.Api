@@ -2,6 +2,7 @@ package br.com.econective.Finance.Person;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -51,6 +52,15 @@ public class PersonEntity implements Serializable {
 
 	@Column(nullable = true)
 	String Document3;
+	
+	@Column(nullable = false)
+	Boolean Active;
+	
+	@Column(nullable = false)
+	LocalDateTime CreatedAt;
+	
+	@Column(nullable = true)
+	LocalDateTime updatedAt;
 
 	public long getId() {
 		return Id;
@@ -146,6 +156,30 @@ public class PersonEntity implements Serializable {
 
 	public void setDocument3(String document3) {
 		Document3 = document3;
+	}
+
+	public Boolean getActive() {
+		return Active;
+	}
+
+	public void setActive(Boolean active) {
+		Active = active;
+	}
+
+	public LocalDateTime getCreatedAt() {
+		return CreatedAt;
+	}
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+		CreatedAt = createdAt;
+	}
+
+	public LocalDateTime getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(LocalDateTime updatedAt) {
+		this.updatedAt = updatedAt;
 	}
 	
 }
