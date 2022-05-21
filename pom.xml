@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com.econective</groupId>
 	<artifactId>Finance</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>Finance</name>
 	<description>Api de controle financeiro</description>
 	<properties>
