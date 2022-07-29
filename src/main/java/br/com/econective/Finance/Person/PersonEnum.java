@@ -2,33 +2,6 @@ package br.com.econective.Finance.Person;
 
 public class PersonEnum {
 	
-	public enum Gender {
-		Female,		//Feminino
-		Male;		//Masculino
-		
-		public int getGenderId() {
-			switch(this) {
-			case Female:
-		        return 1;
-			case Male:
-				return 2;
-			default:
-			    return 0;
-			}
-		}
-		
-		public String getGenderInitial() {
-			switch(this) {
-			case Female:
-		        return "F";
-			case Male:
-				return "M";
-			default:
-			    return null;
-			}
-		}
-	}
-	
 	public enum Type {
 		Physical,		//Fisica
 		Juridical;		//Jurídica
@@ -50,6 +23,33 @@ public class PersonEnum {
 		        return "F";
 			case Juridical:
 				return "J";
+			default:
+			    return null;
+			}
+		}
+	}
+	
+	public enum Gender {
+		Female,		//Feminino
+		Male;		//Masculino
+		
+		public int getGenderId() {
+			switch(this) {
+			case Female:
+		        return 1;
+			case Male:
+				return 2;
+			default:
+			    return 0;
+			}
+		}
+		
+		public String getGenderInitial() {
+			switch(this) {
+			case Female:
+		        return "F";
+			case Male:
+				return "M";
 			default:
 			    return null;
 			}

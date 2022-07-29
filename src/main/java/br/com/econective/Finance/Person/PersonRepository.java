@@ -3,6 +3,7 @@ package br.com.econective.Finance.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+
 import org.springframework.data.domain.*;
 
 
@@ -13,7 +14,7 @@ public interface PersonRepository extends JpaRepository<PersonEntity, Long> {
 	
 	PersonEntity findById(long id);
 	
-	@Query("Select * FROM Person p WHERE p.Document1 = ?1")
-	PersonEntity findByDocument1(String Document1);
+	@Query(value ="Select * from Person p where p.Document1=?1", nativeQuery = true)
+	PersonEntity findByDocument1(String document1);
 
 }

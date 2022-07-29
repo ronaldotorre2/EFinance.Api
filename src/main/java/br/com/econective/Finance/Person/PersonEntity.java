@@ -23,43 +23,43 @@ public class PersonEntity implements Serializable {
 	@Column(nullable = false, name = "typeId")
 	int Type;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "name")
 	String Name;
 
-	@Column(nullable = true)
+	@Column(nullable = true, name = "socialName")
 	String SocialName;
 
-	@Column(nullable = true)
+	@Column(nullable = true, name = "birthDate")
 	LocalDate BirthDate;
 	
-	@Column(nullable = true)
-	int hometownCountry;
+	@Column(nullable = true, name = "hometownCountry")
+	int HometownCountry;
 
-	@Column(nullable = true)
-	int hometownState;
+	@Column(nullable = true, name = "hometownState")
+	int HometownState;
 
-	@Column(nullable = true)
-	String hometownCity;
+	@Column(nullable = true, name = "hometownCity")
+	String HometownCity;
 
-	@Column(nullable = true)
+	@Column(nullable = true, name = "gender")
 	String Gender;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "document1")
 	String Document1;
 
-	@Column(nullable = true)
+	@Column(nullable = true, name = "document2")
 	String Document2;
 
-	@Column(nullable = true)
+	@Column(nullable = true, name = "document3")
 	String Document3;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "active")
 	Boolean Active;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "createdAt")
 	LocalDateTime CreatedAt;
 	
-	@Column(nullable = true)
+	@Column(nullable = true, name = "updatedAt")
 	LocalDateTime updatedAt;
 
 	public long getId() {
@@ -103,27 +103,27 @@ public class PersonEntity implements Serializable {
 	}
 
 	public int getHometownCountry() {
-		return hometownCountry;
+		return HometownCountry;
 	}
 
 	public void setHometownCountry(int hometownCountry) {
-		this.hometownCountry = hometownCountry;
+		this.HometownCountry = hometownCountry;
 	}
 
 	public int getHometownState() {
-		return hometownState;
+		return HometownState;
 	}
 
 	public void setHometownState(int hometownState) {
-		this.hometownState = hometownState;
+		this.HometownState = hometownState;
 	}
 
 	public String getHometownCity() {
-		return hometownCity;
+		return HometownCity;
 	}
 
 	public void setHometownCity(String hometownCity) {
-		this.hometownCity = hometownCity;
+		this.HometownCity = hometownCity;
 	}
 
 	public String getGender() {

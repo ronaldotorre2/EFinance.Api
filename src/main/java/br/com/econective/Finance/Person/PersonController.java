@@ -29,8 +29,8 @@ public class PersonController {
 		return personRepository.findById(id);
 	}
 	
-	@GetMapping("/document1/{document}")
-	public PersonEntity GetById(@PathVariable(value="document1") String document1) {
+	@GetMapping("/document1/{document1}")
+	public PersonEntity GetByDocument1(@PathVariable(value="document1") String document1) {
 		return personRepository.findByDocument1(document1);
 	}
 	
