@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -62,18 +63,50 @@ public class PersonController {
 		return personRepository.findByDocument1(document1);
 	}
 	
+	@GetMapping("/document2/{document2}")
+	public PersonEntity GetByDocument2(@PathVariable(value="document2") String document2) {
+		return personRepository.findByDocument2(document2);
+	}
+	
 	@PostMapping("/")
-	public void Create(@RequestBody PersonEntity person) {
-		personRepository.save(person);
+	public ResponseEntity<PersonEntity> Create(@RequestBody PersonEntity person) {
+		try {
+			personRepository.save(person);
+			return ResponseEntity.status(HttpStatus.CREATED).body(person);
+		}
+		catch(RuntimeException ex) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Ocurred error, " + ex.getMessage());
+		}
+		catch(Exception ex) {
+			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Ocurred error, " + ex.getMessage());
+		}
 	}
 	
 	@PutMapping("/")
-	public void Update(@RequestBody PersonEntity person) {
-		personRepository.save(person);
+	public ResponseEntity<PersonEntity> Update(@RequestBody PersonEntity person) {
+		try {
+			personRepository.save(person);
+			return ResponseEntity.status(HttpStatus.OK).body(person);
+		}
+		catch(RuntimeException ex) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Ocurred error, " + ex.getMessage());
+		}
+		catch(Exception ex) {
+			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Ocurred error, " + ex.getMessage());
+		}
 	}
 	
 	@DeleteMapping("/")
-	public void Delete(@RequestBody PersonEntity person) {
-		personRepository.delete(person);
+	public ResponseEntity<PersonEntity> Delete(@RequestBody PersonEntity person) {
+		try {
+			personRepository.delete(person);
+			return ResponseEntity.status(HttpStatus.OK).body(person);
+		}
+		catch(RuntimeException ex) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Ocurred error, " + ex.getMessage());
+		}
+		catch(Exception ex) {
+			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Ocurred error, " + ex.getMessage());
+		}
 	}
 }
