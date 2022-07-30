@@ -23,10 +23,10 @@ public class PersonEntity implements Serializable {
 	@Column(nullable = false, name = "typeId")
 	int Type;
 
-	@Column(nullable = false, name = "name")
+	@Column(nullable = false, name = "name", unique = true, length = 75)
 	String Name;
 
-	@Column(nullable = true, name = "socialName")
+	@Column(nullable = true, name = "socialName", length = 150)
 	String SocialName;
 
 	@Column(nullable = true, name = "birthDate")
@@ -44,7 +44,7 @@ public class PersonEntity implements Serializable {
 	@Column(nullable = true, name = "gender")
 	String Gender;
 
-	@Column(nullable = false, name = "document1")
+	@Column(nullable = false, name = "document1", unique = true)
 	String Document1;
 
 	@Column(nullable = true, name = "document2")

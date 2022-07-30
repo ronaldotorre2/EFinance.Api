@@ -25,7 +25,7 @@ Create table Person
 	id		 				integer      	not null auto_increment,
 	typeId 					integer 		not null,
 	name					varchar(75)		not null,
-	socialName				varchar(100)	null,
+	socialName				varchar(150)	null,
 	birthDate				date			null,
 	hometownCountry			integer 		null,
     hometownState			integer 		null,
@@ -39,6 +39,21 @@ Create table Person
 	createdAt               timestamp     	not null ,
 	updatedAt				timestamp     	null,
 	constraint Pk_Person primary key(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+Create table PersonFiliation
+(
+	id		 				integer      	not null auto_increment,
+	personId				integer 		not null,
+	name					varchar(75)		not null,
+	document1				varchar(25)		not null,
+	document2 				varchar(25)		null,
+	active                  bit 			not null DEFAULT 1,
+	createdAt               timestamp     	not null ,
+	updatedAt				timestamp     	null,
+	constraint Pk_PersonFiliation primary key(id),
+	constraint Fk_PersonFiliation_Person foreign key(personId) references Person(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
