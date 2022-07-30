@@ -23,7 +23,7 @@ public class PersonEntity implements Serializable {
 	@Column(nullable = false, name = "typeId")
 	int Type;
 
-	@Column(nullable = false, name = "name", unique = true, length = 75)
+	@Column(nullable = false, name = "name", length = 75)
 	String Name;
 
 	@Column(nullable = true, name = "socialName", length = 150)
